@@ -20,6 +20,7 @@ class Turn {
     } else {
         this.isCorrect = false
     }
+    return this.isCorrect;
   }
 
   giveFeedback() {
@@ -28,6 +29,7 @@ class Turn {
     } else {
       this.correctText = 'incorrect!';
     }
+    return this.correctText;
   }
 
 }
