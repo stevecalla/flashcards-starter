@@ -13,7 +13,7 @@ describe('Turn', function() {
   });
 
   it('should be a function', function() {
-    expect(Turn).to.be.a('function');
+    expect(turn).to.be.a('function');
   });
 
   it('should be an instance of Turn', function() {
@@ -51,44 +51,21 @@ describe('Turn', function() {
   }); 
 
   it('should return a boolean indicating if the user’s guess matches the correct answer on the card', function() {
-    turn.evaluateGuess();
-
-    expect(turn.isCorrect).to.deep.equal(false);
+    expect(turn.evaluateGuess()).to.equal(false);
 
     const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn2 = new Turn('sea otter', card2);
 
-    turn2.evaluateGuess();
-
-    expect(turn2.isCorrect).to.deep.equal(true);
-  }); 
-
-  it('should return a boolean indicating if the user’s guess matches the correct answer on the card', function() {
-    turn.evaluateGuess();
-
-    expect(turn.isCorrect).to.deep.equal(false);
-
-    const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn2 = new Turn('sea otter', card2);
-
-    turn2.evaluateGuess();
-
-    expect(turn2.isCorrect).to.deep.equal(true);
+    expect(turn2.evaluateGuess()).to.deep.equal(true);
   }); 
 
   it('returns either ‘incorrect!’ or ‘correct!’ based on whether the guess is correct or not', function() {
-    turn.evaluateGuess();
-    turn.giveFeedback();
-
-    expect(turn.correctText).to.equal('incorrect!');
+    expect(turn.giveFeedback()).to.equal('incorrect!');
 
     const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn2 = new Turn('sea otter', card2);
 
-    turn2.evaluateGuess();
-    turn2.giveFeedback();
-
-    expect(turn2.correctText).to.equal('correct!');
+    expect(turn2.giveFeedback()).to.equal('correct!');
   }); 
 
 });
