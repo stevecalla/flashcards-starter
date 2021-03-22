@@ -24,11 +24,12 @@ class Turn {
   }
 
   giveFeedback() {
-    if (this.isCorrect) {
+    if (this.evaluateGuess()) {
       this.correctText = 'correct!';
     } else {
       this.correctText = 'incorrect!';
     }
+    console.log(this);
     return this.correctText;
   }
 
