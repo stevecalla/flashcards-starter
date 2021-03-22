@@ -5,6 +5,7 @@ const Card = require('../src/Card');
 const Turn = require('../src/Turn'); // ADDED
 
 describe('Turn', function() {
+  let card, turn;
 
   beforeEach(function() {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -55,7 +56,7 @@ describe('Turn', function() {
     expect(turn.isCorrect).to.deep.equal(false);
 
     const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    const turn2 = new Turn('sea otter', card);
+    const turn2 = new Turn('sea otter', card2);
 
     turn2.evaluateGuess();
 
@@ -96,7 +97,7 @@ describe('Turn', function() {
 // - [x] Instantiated with two arguments - 
 //      1) a string (that represents a user’s guess to the question)
 //      2) a Card object for the current card in play.
-        // const turn = new Turn('pug', card);
+// const turn = new Turn('pug', card);
 
 // - [x] returnGuess: method that returns the guess
 // - [x] returnCard: method that returns the Card
