@@ -4,7 +4,6 @@ class Turn {
     this.currentCard = currentCard;
     this.isCorrect = null;
     this.correctText = null;
-    // console.log(this);
   }
 
   returnGuess() {
