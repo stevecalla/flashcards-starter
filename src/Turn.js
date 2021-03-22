@@ -2,8 +2,6 @@ class Turn {
   constructor(guess, currentCard) {
     this.guess = guess;
     this.currentCard = currentCard;
-    // this.isCorrect = null;
-    this.correctText = null;
   }
 
   returnGuess() {
