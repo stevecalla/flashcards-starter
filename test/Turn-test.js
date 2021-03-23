@@ -13,7 +13,7 @@ describe('Turn', function() {
   });
 
   it('should be a function', function() {
-    expect(turn).to.be.a('function');
+    expect(Turn).to.be.a('function');
   });
 
   it('should be an instance of Turn', function() {
@@ -50,23 +50,27 @@ describe('Turn', function() {
     });
   }); 
 
-  it('should return a boolean indicating if the user’s guess matches the correct answer on the card', function() {
+  it('should return a boolean indicating if the guess does not match the correct answer', function() {
     expect(turn.evaluateGuess()).to.equal(false);
+  }); 
 
+  it('should return a boolean indicating if the guess does match the correct answer', function() {
     const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn2 = new Turn('sea otter', card2);
 
     expect(turn2.evaluateGuess()).to.deep.equal(true);
   }); 
 
-  it('returns either ‘incorrect!’ or ‘correct!’ based on whether the guess is correct or not', function() {
+  it('returns either ‘incorrect!’ based on an incorrect guess', function() {
     expect(turn.giveFeedback()).to.equal('incorrect!');
+  }); 
 
+  it('returns either ‘correct!’ based on a correct guess', function() {
     const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn2 = new Turn('sea otter', card2);
 
     expect(turn2.giveFeedback()).to.equal('correct!');
-  }); 
+  });   
 
 });
 
