@@ -4,6 +4,7 @@ class Round {
   constructor(deck) {
     if (deck) {
       this.deck = deck;
+      // console.log(this.deck);
       this.currentCard = this.deck.cards[0];
       this.currentGuess = null;
       this.turns = 0;

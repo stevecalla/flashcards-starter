@@ -75,7 +75,7 @@ describe('Round', function() {
     });
   });  
 
-  it('should havea a takeTurn method store the current guess', function() {
+  it('should have a takeTurn method store the current guess', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
@@ -246,7 +246,7 @@ describe('Round', function() {
     round.takeTurn('gallbladder');
     round.takeTurn('playing with bubble wrap')
 
-    // const correct = round.calculatPercentCorrect();
+    round.calculatPercentCorrect();
 
     expect(round.endRound()).to.equal(`** Round over! ** You answered 67% of the questions correctly!`);
   }); 
