@@ -4,7 +4,7 @@ const expect = chai.expect;
 const Round = require('../src/Round');
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
-const Turn = require('../src/Turn');
+// const Turn = require('../src/Turn');
 
 describe('Round', function() {
 
@@ -24,7 +24,7 @@ describe('Round', function() {
 
     const deck = new Deck([card1, card2, card3]);
 
-    const round = new Round(deck);
+    // const round = new Round(deck);
 
     expect([deck]).to.be.an.instanceof(Array);
     expect([deck.cards]).to.be.an.instanceof(Array);
@@ -117,12 +117,10 @@ describe('Round', function() {
 
     round.takeTurn('pug');
 
-    // expect(round.turnCount).to.equal(1);
     expect(round.turns).to.equal(1);
 
     round.takeTurn('capybara');
 
-    // expect(round.turnCount).to.equal(2);
     expect(round.turns).to.equal(2);
   });
 
@@ -181,6 +179,78 @@ describe('Round', function() {
 
   });
 
+  // calculatePercentCorrect: method that calculates and returns the percentage of correct guesses
+
+  it('should calculate and return 100 percent correct', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+
+    const deck = new Deck([card1, card2, card3]);
+
+    const round = new Round(deck);
+
+    round.takeTurn('sea otter');
+
+    const correct = round.calculatPercentCorrect();
+
+    expect(correct).to.equal(100);
+
+  });
+
+  it('should calculate and return 0 percent correct', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+
+    const deck = new Deck([card1, card2, card3]);
+
+    const round = new Round(deck);
+
+    round.takeTurn('pug');
+
+    const correct = round.calculatPercentCorrect();
+
+    expect(correct).to.equal(0);
+
+  }); 
+
+  it('should calculate and return 67 percent correct', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+
+    const deck = new Deck([card1, card2, card3]);
+
+    const round = new Round(deck);
+
+    round.takeTurn('pug');
+    round.takeTurn('gallbladder');
+    round.takeTurn('playing with bubble wrap')
+
+    const correct = round.calculatPercentCorrect();
+
+    expect(correct).to.equal(67);
+  }); 
+
+  it('should console log ‘** Round over! ** You answered <>% of the questions correctly!’', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+
+    const deck = new Deck([card1, card2, card3]);
+
+    const round = new Round(deck);
+
+    round.takeTurn('pug');
+    round.takeTurn('gallbladder');
+    round.takeTurn('playing with bubble wrap')
+
+    // const correct = round.calculatPercentCorrect();
+
+    expect(round.endRound()).to.equal(`** Round over! ** You answered 67% of the questions correctly!`);
+  }); 
+  
 }); 
 
 // Round
