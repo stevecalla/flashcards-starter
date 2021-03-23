@@ -117,15 +117,14 @@ describe('Round', function() {
 
     round.takeTurn('pug');
 
-    expect(round.turnCount).to.equal(1);
+    // expect(round.turnCount).to.equal(1);
+    expect(round.turns).to.equal(1);
 
     round.takeTurn('capybara');
 
-    expect(round.turnCount).to.equal(2);
+    // expect(round.turnCount).to.equal(2);
+    expect(round.turns).to.equal(2);
   });
-
-  // test instance of new turn created?
-  // The next card becomes current card
 
   it('should have a property incorrectGuesses which is an empty array', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -154,7 +153,22 @@ describe('Round', function() {
     expect(round.incorrectGuesses.length).to.equal(1);
   });
 
-  it('should return regarding whether the guess is incorrect or correct', function() {
+  it('should adjust the current card to the next card in the deck', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+
+    const deck = new Deck([card1, card2, card3]);
+
+    const round = new Round(deck);
+
+    round.takeTurn('pug');
+
+    expect(round.currentCard.id).to.equal(14);
+
+  });
+
+  it('should return whether the guess is incorrect or correct', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
@@ -185,8 +199,8 @@ describe('Round', function() {
 
       // xx// When a guess is made, a new Turn instance is created.
       // xx// The turns count is updated, regardless of whether the guess is correct or incorrect
-      // Guess is evaluated/recorded. Incorrect guesses will be stored (via the id) in an array of incorrectGuesses
-      // The next card becomes current card
+      // xx//Guess is evaluated/recorded. Incorrect guesses will be stored (via the id) in an array of incorrectGuesses
+      // xx//The next card becomes current card
       // xx// Feedback is returned regarding whether the guess is incorrect or correct
 
 // #3) calculatePercentCorrect: method that calculates and returns the percentage of correct guesses

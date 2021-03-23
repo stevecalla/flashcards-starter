@@ -7,6 +7,7 @@ class Round {
       this.currentCard = this.deck.cards[0];
       this.currentGuess = null;
       this.turnCount = 0;
+      this.turns = 0;
       this.incorrectGuesses = [];
       // console.log('d', this);
       // console.log(this.deck.cards[0])
@@ -25,11 +26,19 @@ class Round {
       this.incorrectGuesses.push(this.currentCard.id);
     }
     // console.log(this)
+    this.updateCurrentCard();
     return currentTurn.giveFeedback();
   }
 
   updateTurnCount() {
-    return this.turnCount++;
+    this.turns++;
+    return this.turns;
+    // return this.turnCount++;
+  }
+
+  updateCurrentCard() {
+    console.log(this.deck.cards[this.turns]);
+    return this.currentCard = this.deck.cards[this.turns];
   }
 
 }
