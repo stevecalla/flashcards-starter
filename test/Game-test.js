@@ -46,6 +46,7 @@ describe('Game', function() {
 
     expect(game.deck).to.be.an.instanceof(Deck);
     expect(game.currentRound).to.be.an.instanceof(Round);
+    //test that createcards is an instance of Card
   });
 
 }); 

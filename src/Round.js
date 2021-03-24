@@ -20,18 +20,26 @@ class Round {
     return this.currentCard;
   }
 
+  //breakup this method?
+  //howt test that currentTurn is instance of turn w/out a property?
+
   takeTurn(guess) {
     // console.log(this)
     this.currentGuess = guess;
+    
     const currentTurn = new Turn(guess, this.currentCard);
+
     this.updateTurnCount();
+
     if (currentTurn.evaluateGuess() === false) {
       this.incorrectGuesses.push(this.currentCard.id);
     } else {
       this.correctGuesses++;
     }
     // console.log(this)
+
     this.updateCurrentCard();
+
     return currentTurn.giveFeedback();
   }
 
@@ -44,14 +52,23 @@ class Round {
     return this.currentCard = this.deck.cards[this.turns];
   }
 
-  calculatPercentCorrect() {
+  calculatPercentCorrect() { //refacotr to one line?
     this.percentCorrect = Math.ceil((this.correctGuesses / this.turns) * 100);
     return this.percentCorrect;
   }
 
-  endRound() {
+  endRound() { //can i remove console log? what am i missing?
     this.percentCorrect = this.calculatPercentCorrect();
-    const endRoundMessage = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`;
+    const endRoundMessage = `
+***********************************************************************************    
+                               ** ROUND OVER! **
+    
+         You answered ${this.percentCorrect}% (or ${this.correctGuesses} out of ${this.turns}) of the questions correctly!
+       Carefully review the correct answers as necessary. And play again!!
+              To play again type in node index.js. Good luck!
+
+-----------------------------------------------------------------------------------
+`;
     console.log(endRoundMessage);
     return endRoundMessage;
   }

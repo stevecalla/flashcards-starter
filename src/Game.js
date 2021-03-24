@@ -16,7 +16,7 @@ class Game {
   }
 
   startGame() {
-    for(let i = 0; i < prototypeQuestions.length; i++) {
+    for(let i = 0; i < prototypeQuestions.length; i++) { //refactor to iterator method
       this.createCards.push(new Card(prototypeQuestions[i].id, prototypeQuestions[i].question, prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer));
     }
     // console.log(this.createCards);
@@ -32,8 +32,15 @@ class Game {
   }
 
   printMessage(deck) {
-      console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
------------------------------------------------------------------------`)
+      console.log(`
+***********************************************************************************
+                            WELCOME TO FLASHCARDS! 
+
+            You will be presented ${deck.countCards()} questions. Make your best guess.
+      Press the numer of your choice or enter for the default first choice.
+                Your score will be reported after the last card.
+-----------------------------------------------------------------------------------
+`)
   }
 
   printQuestion(round) {

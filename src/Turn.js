@@ -12,15 +12,15 @@ class Turn {
     this.currentCard;
   }
 
-  evaluateGuess() {
+  evaluateGuess() { //refactor to ternary?
     if (this.guess === this.currentCard.correctAnswer) {
       return true;
     } else {
-      return false
+      return false;
     }
   }
 
-  giveFeedback() {
+  giveFeedback() { //refactor to ternary?
     if (this.evaluateGuess()) {
       return 'correct!';
     } else {

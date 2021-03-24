@@ -26,9 +26,10 @@ describe('Deck', function() {
     expect([deck]).to.be.an('array');
   })
 
+  //add test to check if the cards inthe deck are instancesof the Card class?
+
   it('should know how many Cards are in the Deck', function() {
     deck.countCards();
-
     expect(deck.cards).to.have.lengthOf(3);
   })
 
