@@ -70,7 +70,7 @@ class Round {
 -----------------------------------------------------------------------------------
 `;
     console.log(endRoundMessage);
-    return endRoundMessage;
+    // return endRoundMessage;
   }
 
 }
