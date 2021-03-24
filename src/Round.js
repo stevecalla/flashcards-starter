@@ -50,7 +50,9 @@ class Round {
   }
 
   endRound() {
-    const endRoundMessage = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`
+    this.percentCorrect = this.calculatPercentCorrect();
+    const endRoundMessage = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`;
+    console.log(endRoundMessage);
     return endRoundMessage;
   }
 

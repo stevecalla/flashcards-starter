@@ -1,9 +1,10 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-const Card = require('../src/Card');
+// const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const Game = require('../src/Game');
+const Round = require('../src/Round');
 
 describe('Game', function() {
 
@@ -22,19 +23,29 @@ describe('Game', function() {
   //   //how do i test this....?
   // });
 
-  it('should create cards', function () {
-    const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+  // it('should create cards', function () {
+  //   const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+  //   const game = new Game();
+
+  //   game.startGame(card);
+
+  //   expect(game.createCards).to.be.an('object');
+  //   expect(game.createCards).to.deep.equal({
+  //     id: 1,
+  //     question: "What is Robbie's favorite animal",
+  //     answers: [ 'sea otter', 'pug', 'capybara' ],
+  //     correctAnswer: 'sea otter'
+  //   });
+  // });
+
+  it('should create an instance of Round', function () {
+    // const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const game = new Game();
 
-    game.startGame(card);
+    game.startGame();
 
-    expect(game.createCards).to.be.an('object');
-    expect(game.createCards).to.deep.equal({
-      id: 1,
-      question: "What is Robbie's favorite animal",
-      answers: [ 'sea otter', 'pug', 'capybara' ],
-      correctAnswer: 'sea otter'
-    });
+    expect(game.deck).to.be.an.instanceof(Deck);
+    expect(game.currentRound).to.be.an.instanceof(Round);
   });
 
 }); 

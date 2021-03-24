@@ -12,6 +12,7 @@ class Game {
     // console.log(this.currentRound);
     // console.log(this);
     this.createCards = [];
+    this.deck;
   }
 
   startGame() {
@@ -19,17 +20,18 @@ class Game {
       this.createCards.push(new Card(prototypeQuestions[i].id, prototypeQuestions[i].question, prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer));
     }
     // console.log(this.createCards);
-    const deck = new Deck(this.createCards);
+    this.deck = new Deck(this.createCards);
+    // console.log(deck);
     // console.log(deck);
     // const newRound = new Round(deck);
-    this.currentRound = new Round(deck);
+    this.currentRound = new Round(this.deck);
     // console.log(this.currentRound);
 
-    this.printMessage(deck, this.currentRound);
+    this.printMessage(this.deck);
     this.printQuestion(this.currentRound);
   }
 
-  printMessage(deck, round) {
+  printMessage(deck) {
       console.log(`Welcome to FlashCards! You are playing with ${deck.countCards()} cards.
 -----------------------------------------------------------------------`)
   }

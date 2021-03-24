@@ -37,9 +37,11 @@ async function main(round) {
 
     if(!round.returnCurrentCard()) {
       round.endRound();
+      process.exit(0);
     } else {
       main(round);
     }
+    
 }
 
 module.exports.main = main;
