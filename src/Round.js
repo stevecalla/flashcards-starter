@@ -31,7 +31,7 @@ class Round {
 
     this.updateTurnCount();
 
-    if (currentTurn.evaluateGuess() === false) {
+    if (!currentTurn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
     } else {
       this.correctGuesses++;
@@ -61,7 +61,7 @@ class Round {
     this.percentCorrect = this.calculatPercentCorrect();
     const endRoundMessage = `
 ***********************************************************************************    
-                               ** ROUND OVER! **
+                              🟡  ROUND OVER! 🟡
     
          You answered ${this.percentCorrect}% (or ${this.correctGuesses} out of ${this.turns}) of the questions correctly!
        Carefully review the correct answers as necessary. And play again!!
