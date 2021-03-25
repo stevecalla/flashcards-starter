@@ -1,79 +1,74 @@
-# FlashCards Starter Kit
+## FlashCards
 
-## Fork This Repo
+A [Front-End Project] by: [Steve Calla](https://github.com/stevecalla)
 
-On the top right corner of this page, click the **Fork** button.
+## Index
 
-## Setup
+1. [Overview](#overview)
+2. [Wave Score](#accessibility)
+3. [Functionality](#functionality)
+4. [Technologies](#technologies)
+5. [Contributors](#contributors)
+6. [Resources](#resources)
 
-Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
+## Overview
 
-```bash
-git clone [remote-address] [what you want to name the repo]
-```
+Flashcards is a game that tests a users understanding of basic coding concepts. The test is run throought the command line! 😱 A user will be preented with 30 questions, take guesses, and see a final score at the end of the round.
 
-Once you have cloned the repo, change into the directory and install the library dependencies. Run:
+## Website Preview - Basic Functionality
 
-```bash
-npm install
-```
+<!-- <img src="https://media.giphy.com/media/CrMXnfKeOY4yPH08C5/giphy.gif" width="100%" height="500"/> -->
 
-To verify that it is setup correctly, run `npm test` in your terminal. You should have 5 pending tests in your `Card` test file that show up.
+## Main Page View
 
-Running `node index.js` from the root of your project should result in the following message being displayed in your terminal: 
+<!-- <img width="1255" alt="Blank Board" src="https://user-images.githubusercontent.com/72281855/110523549-7e457980-80cf-11eb-93ef-937ce54949a6.png"> -->
 
-```bash
-Node server running on port 3000
-```
+## Functionality
 
-*Note that you will not need to you run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
+* TBD
+* TBD
+* TBD
+
+* Enhancements:
+    * Improved the start and end game layout and description.
+    * Added "process.exit(0)" to line 40 of util.js to programatically return the user to the prompt at the end of the game.
+    * Added a blue circle 🔵 emoji for correct answers and red circle 🔴 emoji for incorrect answers.
+    * Removed unnecessary server related code in the index.js file.
+    * TBD
 
 
-## Where to Add Your Code
+* Future Enhancements:
+    * More practice: Add functionality so that a score of less than 90% will require the user to go through the entire dataset again.
+    * Review incorrect answers: Add functionality so that the Round (and thus, the Game) does not end after you’ve gone through all of the cards. The player should then be prompted to try to guess again, reviewing only those cards that are stored as incorrect.
+    * Timer: At the end of the game, report how much time it took to complete the game (in minutes and seconds).
+    * Report Card: At the end of the game, create a report card that would detail any answers that the user got wrong as well as how many tries each question took.
+    * Options for mixed datasets: At the beginning of the game, give options for choosing to study different subjects (have a dataset for one subject and another subject), as well as the option for mixing all of the subjects together.
 
-### JavaScript
+* Known Issues/Bugs:
+    * None at this time.
 
-**Create all of your feature code files in the `src` directory.**
+## Technologies
 
-We will be using the `module.exports` and `require` syntax to share code across files.
+1. JavaScript
+2. GitHub
+3. ESLint
+4. NPM Package - inquirer.prompt
 
-## How to View Your Code in Action
+## Install/Setup instructions
 
-Once you are working through Iteration 3, you will want to start your server to test your functionality.
-In the terminal, run:
+1. Get The Repo: Go to https://github.com/stevecalla/flashcards-starter.
+2. Fork & Clone: Fork the repo to your GitHub, then clone it to your local machine.
+2. Install NPM: Once you have cloned the repo, change into the directory and install the library dependencies. Run: "npm install" to do so at the terminal prompt.
+3. Play The Game: Enter "node index.js" at the terminal commmand prompt. Ensure you are in the root directory of the Flashcard folder/directory. A message with instructions will display
 
-```bash
-node index.js
-```
+## Contributor(s)
 
-When the game is functioning appropriately, you will be prompted for each question, have the opportunity to select an answer, and will be given feedback. You will be able to play through the entire deck of cards:
+* Creators: [Steve Calla](https://github.com/stevecalla)
 
-![flash cards example gif](https://media.giphy.com/media/1zkb1q58eTiTH6D7wc/giphy.gif)
+## Resources
+* Project Description: https://frontend.turing.io/projects/flash-cards.html
+* GitHub Repo - Steve Calla: https://github.com/stevecalla/flashcards-starter
+* GitHub Repo - Original Turing: https://github.com/turingschool-examples/flashcards-starter
+* Project Board: https://github.com/stevecalla/flashcards-starter/projects/1
+* GitHub Hosted URL: not applicable.
 
----
-
-## Test Files Organization
-
-Similar to feature code, your test code needs to be put in a specific place for it to run successfully.
-
-**Put all of your test files in the `test` directory.** As a convention, all test filenames should end with `-test.js`. For instance: `Round-test.js`.
-
-## Running Your Tests
-
-Run your test suite using the command:
-
-```bash
-npm test
-```
-
-The test results will output to the terminal.
-
----
-
-## Linting Your Code
-
-Run the command in your terminal `npm run lint` to run the linter on your JavaScript code. There will be errors and warnings right from the start in this starter kit - the linter is still running successfully.
-
-Your linter will look at the JavaScript files you have within the `src` directory and the `test` directory. 
-
----
