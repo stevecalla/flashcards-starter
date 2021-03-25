@@ -4,15 +4,11 @@ class Round {
   constructor(deck) {
     if (deck) {
       this.deck = deck;
-      // console.log(this.deck);
       this.currentCard = this.deck.cards[0];
-      this.currentGuess = null;
       this.turns = 0;
       this.incorrectGuesses = [];
       this.correctGuesses = 0;
       this.percentCorrect = 0;
-      // console.log('d', this);
-      // console.log(this.deck.cards[0])
     }
   }
 
@@ -20,45 +16,36 @@ class Round {
     return this.currentCard;
   }
 
-  //breakup this method?
-  //howt test that currentTurn is instance of turn w/out a property?
-
   takeTurn(guess) {
-    // console.log(this)
-    this.currentGuess = guess;
-    
     const currentTurn = new Turn(guess, this.currentCard);
-
     this.updateTurnCount();
-
-    if (!currentTurn.evaluateGuess()) {
-      this.incorrectGuesses.push(this.currentCard.id);
-    } else {
-      this.correctGuesses++;
-    }
-    // console.log(this)
-
+    this.storeGuessResult(currentTurn);
     this.updateCurrentCard();
-
+    this.calculatPercentCorrect();
     return currentTurn.giveFeedback();
   }
 
   updateTurnCount() {
     this.turns++;
-    return this.turns;
+  }
+
+  storeGuessResult(currentTurn) {
+    if (!currentTurn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.currentCard.id);
+    } else {
+      this.correctGuesses++;
+    }
   }
 
   updateCurrentCard() {
     return this.currentCard = this.deck.cards[this.turns];
   }
 
-  calculatPercentCorrect() { //refacotr to one line?
+  calculatPercentCorrect() {
     this.percentCorrect = Math.ceil((this.correctGuesses / this.turns) * 100);
-    return this.percentCorrect;
   }
 
-  endRound() { //can i remove console log? what am i missing?
-    this.percentCorrect = this.calculatPercentCorrect();
+  endRound() {
     const endRoundMessage = `
 ***********************************************************************************    
                               🟡  ROUND OVER! 🟡
@@ -70,7 +57,6 @@ class Round {
 -----------------------------------------------------------------------------------
 `;
     console.log(endRoundMessage);
-    // return endRoundMessage;
   }
 
 }

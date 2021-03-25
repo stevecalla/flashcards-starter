@@ -25,13 +25,14 @@ class Game {
 
   printMessage(deck) {
       console.log(`
-***********************************************************************************
-                          🟡 WELCOME TO FLASHCARDS! 🟡
+**************************************************************************************************
+                                 🟡 WELCOME TO FLASHCARDS! 🟡
 
-            You will be presented ${deck.countCards()} questions. Make your best guess.
-   Press the numer of your choice or press <return> for the default first choice.
-    Your score (number of correct guesses) will be reported after the last card.
------------------------------------------------------------------------------------
+                   You will be presented ${deck.countCards()} questions. Make your best guess.
+           Press the numer of your choice or press <return> for the default first choice.
+Your score (number of correct guesses) will be reported after each guess and after the last card.
+
+--------------------------------------------------------------------------------------------------
 `)
   }
 

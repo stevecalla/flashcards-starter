@@ -62,48 +62,14 @@ describe('Turn', function() {
   }); 
 
   it('returns either ‘incorrect!’ based on an incorrect guess', function() {
-    expect(turn.giveFeedback()).to.equal('incorrect!');
+    expect(turn.giveFeedback()).to.equal('incorrect! 🔴');
   }); 
 
   it('returns either ‘correct!’ based on a correct guess', function() {
     const card2 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const turn2 = new Turn('sea otter', card2);
 
-    expect(turn2.giveFeedback()).to.equal('correct!');
+    expect(turn2.giveFeedback()).to.equal('correct! 🔵');
   });   
 
 });
-
-// Your Turn class should meet the following requirements:
-// - [x] Instantiated with two arguments - 
-//      1) a string (that represents a user’s guess to the question)
-//      2) a Card object for the current card in play.
-// const turn = new Turn('pug', card);
-
-// - [x] returnGuess: method that returns the guess
-// - [x] returnCard: method that returns the Card
-
-// - [x] evaluateGuess: method that returns a boolean indicating if the user’s 
-// guess matches the correct answer on the card
-
-// - [x] giveFeedback - method that returns either ‘incorrect!’ or ‘correct!’ 
-// based on whether the guess is correct or not.
-
-// For Example
-// const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-// const turn = new Turn('pug', card);
-
-// turn.returnGuess();    // => 'pug'
-
-
-// turn.returnCard();     // => { id: 1,
-//                        //      question: 'What is Robbie\'s favorite animal',
-//                        //      answers: ['sea otter', 'pug', 'capybara'],
-//                        //      correctAnswer: 'sea otter'
-//                        //    }
-
-
-// turn.evaluateGuess();  // => false
-
-
-// turn.giveFeedback();   // => incorrect!
