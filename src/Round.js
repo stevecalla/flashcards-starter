@@ -30,11 +30,8 @@ class Round {
   }
 
   storeGuessResult(currentTurn) {
-    if (!currentTurn.evaluateGuess()) {
-      this.incorrectGuesses.push(this.currentCard.id);
-    } else {
+    return (!currentTurn.evaluateGuess()) ? this.incorrectGuesses.push(this.currentCard.id) : 
       this.correctGuesses++;
-    }
   }
 
   updateCurrentCard() {

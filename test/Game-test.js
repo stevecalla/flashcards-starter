@@ -18,9 +18,9 @@ describe('Game', function() {
   it('should create an instance of Round', function () {
     const game = new Game();
 
-    const dontRunInquirePrompt = true;
+    const dontRunInquirePromptDuringTesting = true; //keep or remove
 
-    game.startGame(dontRunInquirePrompt);
+    game.startGame(dontRunInquirePromptDuringTesting);
 
     expect(game.currentRound).to.be.an.instanceof(Round);
   });

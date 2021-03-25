@@ -5,30 +5,18 @@ const util = require('./util');
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 
-//I just came up with a solution using a trigger (think on/off switch) to prevent 
-//game.start() from running during the test invocation vs during the real invocation. 
-//Don’t want to give too much away but hopefully this will get you going somewhere
-
 class Game {
   constructor() {
     this.currentRound;
   }
 
-  startGame(dontRunInquirePrompt) {
-    // console.log(dontRunInquirePrompt);
-    
+  startGame(dontRunInquirePromptDuringTesting) {
     const createCards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
     const deck = new Deck(createCards);
     this.currentRound = new Round(deck);
-
-    // if (dontRunInquirePrompt === false) {
-    //   //do nothing
-    // } else {
-    //   this.printMessage(deck);
-    //   this.printQuestion(this.currentRound);
-    // }
-
-    if (dontRunInquirePrompt === undefined) {
+    
+    // console.log(dontRunInquirePromptDuringTesting);
+    if (dontRunInquirePromptDuringTesting === undefined) {
       this.printMessage(deck);
       this.printQuestion(this.currentRound);
     }
@@ -50,6 +38,7 @@ class Game {
   printQuestion(round) {
     util.main(round);
   }
+  
 }
 
 module.exports = Game;
