@@ -38,6 +38,7 @@ Flashcards is a game that tests a users understanding of basic coding concepts. 
     * Added "process.exit(0)" to line 40 of util.js to programatically return the user to the prompt at the end of the game.
     * Added a blue circle 🔵 emoji for correct answers and red circle 🔴 emoji for incorrect answers.
     * Removed unnecessary server related code in the index.js file.
+    * Added a variable and condition for the last test in the Game-test file to prevent the game from running during "npm test". Likely would not do this in the real world given other options but wanted to experiement with this and ensure a test was checking that game.currentRound is an instanceof Round to be sure the startGame() was working properly.
 
 * Possible Enhancements:
     * More practice: Add functionality so that a score of less than 90% will require the user to go through the entire dataset again.

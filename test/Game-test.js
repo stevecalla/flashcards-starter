@@ -18,7 +18,7 @@ describe('Game', function() {
   it('should create an instance of Round', function () {
     const game = new Game();
 
-    const dontRunInquirePromptDuringTesting = true; //keep or remove
+    const dontRunInquirePromptDuringTesting = true;
 
     game.startGame(dontRunInquirePromptDuringTesting);
 

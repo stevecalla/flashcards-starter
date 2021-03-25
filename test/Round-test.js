@@ -29,8 +29,7 @@ describe('Round', function() {
     expect([deck.cards]).to.be.an.instanceof(Array);
   });
 
-
-  it('should not take in an instance of Round if undefined', function() { //sad path if Round is empty
+  it('should not take in an instance of Round if undefined', function() {
     const round = new Round();
     expect(round).to.deep.equal({});
   });
@@ -45,7 +44,6 @@ describe('Round', function() {
     });
   });
 
-
   it('should return the current card being played', function() {
     round.returnCurrentCard();
 
@@ -57,37 +55,6 @@ describe('Round', function() {
       correctAnswer: 'sea otter'
     });
   });  
-
-  // it('should have a takeTurn method store the current guess', function() {
-  //   const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-  //   const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-  //   const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
-
-  //   const deck = new Deck([card1, card2, card3]);
-
-  //   const round = new Round(deck);
-
-  //   const guess = 'pug';
-
-  //   round.takeTurn(guess);
-
-  //   expect(round.currentGuess).to.equal('pug');
-  // });
-
-  // it('should have a method called takeTurn to create a new Turn instance', function() {
-  //   const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-  //   const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-  //   const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
-
-  //   const deck = new Deck([card1, card2, card3]);
-
-  //   const round = new Round(deck);
-
-  //   const guess = 'pug';
-
-  //   expect(round.takeTurn(guess)).to.be.an.instanceof(Turn);
-  //   //how to evaluate?
-  // });
 
   it('should have a method called takeTurn to update turnCount property', function() {
     round.takeTurn('pug');
@@ -117,8 +84,13 @@ describe('Round', function() {
 
   });
 
-  it('should return whether the guess is incorrect or correct', function() {
+  it('should return whether the guess is incorrect', function() {
     expect(round.takeTurn('pug')).to.equal('incorrect! 🔴');
+
+  });
+
+  it('should return whether the guess is correct', function() {
+    expect(round.takeTurn('sea otter')).to.equal('correct! 🔵');
 
   });
 

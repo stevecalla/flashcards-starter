@@ -12,10 +12,11 @@ class Game {
 
   startGame(dontRunInquirePromptDuringTesting) {
     const createCards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
+    //destructure card... id, question, answer, correctAnswer... pass in id, question, answer, correctAnswer
+
     const deck = new Deck(createCards);
     this.currentRound = new Round(deck);
     
-    // console.log(dontRunInquirePromptDuringTesting);
     if (dontRunInquirePromptDuringTesting === undefined) {
       this.printMessage(deck);
       this.printQuestion(this.currentRound);
@@ -28,8 +29,9 @@ class Game {
                                  🟡 WELCOME TO FLASHCARDS! 🟡
 
                    You will be presented ${deck.countCards()} questions. Make your best guess.
-           Press the numer of your choice or press <return> for the default first choice.
+           Press the number of your choice or press <return> for the default first choice.
             Your score (number of correct guesses) will be reported after the last card.
+        A blue circle 🔵 will indicate a correct guess and a red circle 🔴 an incorrect guess.
 
 --------------------------------------------------------------------------------------------------
 `)
@@ -38,7 +40,7 @@ class Game {
   printQuestion(round) {
     util.main(round);
   }
-  
+
 }
 
 module.exports = Game;
