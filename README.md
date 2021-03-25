@@ -17,11 +17,11 @@ Flashcards is a game that tests a users understanding of basic coding concepts. 
 
 ## Game Preview - In Terminal
 
-<img src="https://media.giphy.com/media/v3aROyIpe7SBdknlUb/giphy.gif" width="100%" height="500"/>
+<img src="https://media.giphy.com/media/BzKzCMv3QCAbU0X4DP/giphy.gif" width="100%" height="500"/>
 
 ## Testing Preview - 100% Passing
 
-<img width="1122" alt="TESTING SCREENSHOT" src="https://user-images.githubusercontent.com/72281855/112496560-74b44680-8d4a-11eb-8ecf-e22102c0b102.png">
+<img width="1129" alt="FINAL TESTING SCREENSHOT" src="https://user-images.githubusercontent.com/72281855/112554938-dbf2ea80-8d8c-11eb-88d9-efa2b8c75474.png">
 
 ## Functionality
 

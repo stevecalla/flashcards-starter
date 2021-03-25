@@ -12,11 +12,8 @@ class Game {
 
   startGame(dontRunInquirePromptDuringTesting) {
     const createCards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
-    //destructure card... id, question, answer, correctAnswer... pass in id, question, answer, correctAnswer
-
     const deck = new Deck(createCards);
     this.currentRound = new Round(deck);
-    
     if (dontRunInquirePromptDuringTesting === undefined) {
       this.printMessage(deck);
       this.printQuestion(this.currentRound);
