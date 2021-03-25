@@ -6,7 +6,7 @@ const prototypeData = [{
 }, {
   "id": 2,
   "question": "What is a comma-separated list of related values?",
-  "answers": ["function", "array", "object"],
+  "answers": ["array", "function", "object"],
   "correctAnswer": "array"
 }, {
   "id": 3,
@@ -16,7 +16,7 @@ const prototypeData = [{
 }, {
   "id": 4,
   "question": "What type of prototype method does not modify the existing array but returns a particular representation of the array?",
-  "answers": ["mutator method", "accessor method", "iteration method"],
+  "answers": ["accessor method", "mutator method", "iteration method"],
   "correctAnswer": "accessor method"
 }, {
   "id": 5,
@@ -46,7 +46,7 @@ const prototypeData = [{
 }, {
   "id": 10,
   "question": "Which iteration method returns the first array element where the callback function returns true",
-  "answers": ["find()", "filter()", "forEach()"],
+  "answers": ["filter()", "find()", "forEach()"],
   "correctAnswer": "find()"
 }, {
   "id": 11,

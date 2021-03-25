@@ -1,9 +1,8 @@
 const chai = require('chai');
 const expect = chai.expect;
 
-// const Deck = require('../src/Deck');
 const Game = require('../src/Game');
-// const Round = require('../src/Round');
+const Round = require('../src/Round');
 
 describe('Game', function() {
 
@@ -16,14 +15,15 @@ describe('Game', function() {
     expect(currentGame).to.be.an.instanceof(Game);
   }); 
 
-  // it('should create an instance of Round', function () {
-  //   const game = new Game();
+  it('should create an instance of Round', function () {
+    const game = new Game();
 
-  //   game.startGame();
+    const dontRunInquirePromptDuringTesting = true;
 
-  //   // expect(game.deck).to.be.an.instanceof(Deck);
-  //   // expect(game.currentRound).to.be.an.instanceof(Round);
-  // });
+    game.startGame(dontRunInquirePromptDuringTesting);
+
+    expect(game.currentRound).to.be.an.instanceof(Round);
+  });
 
 });
 
