@@ -5,13 +5,10 @@ class Round {
     if (deck) {
       this.deck = deck;
       this.currentCard = this.deck.cards[0];
-      this.currentGuess = null;
       this.turns = 0;
       this.incorrectGuesses = [];
       this.correctGuesses = 0;
       this.percentCorrect = 0;
-      // console.log('d', this);
-      // console.log(this.deck.cards[0])
     }
   }
 
@@ -20,23 +17,24 @@ class Round {
   }
 
   takeTurn(guess) {
-    // console.log(this)
-    this.currentGuess = guess;
     const currentTurn = new Turn(guess, this.currentCard);
     this.updateTurnCount();
-    if (currentTurn.evaluateGuess() === false) {
-      this.incorrectGuesses.push(this.currentCard.id);
-    } else {
-      this.correctGuesses++;
-    }
-    // console.log(this)
+    this.storeGuessResult(currentTurn);
     this.updateCurrentCard();
+    this.calculatPercentCorrect();
     return currentTurn.giveFeedback();
   }
 
   updateTurnCount() {
     this.turns++;
-    return this.turns;
+  }
+
+  storeGuessResult(currentTurn) {
+    if (!currentTurn.evaluateGuess()) {
+      this.incorrectGuesses.push(this.currentCard.id);
+    } else {
+      this.correctGuesses++;
+    }
   }
 
   updateCurrentCard() {
@@ -45,12 +43,20 @@ class Round {
 
   calculatPercentCorrect() {
     this.percentCorrect = Math.ceil((this.correctGuesses / this.turns) * 100);
-    return this.percentCorrect;
   }
 
   endRound() {
-    const endRoundMessage = `** Round over! ** You answered ${this.percentCorrect}% of the questions correctly!`
-    return endRoundMessage;
+    const endRoundMessage = `
+***********************************************************************************    
+                              🟡  ROUND OVER! 🟡
+    
+         You answered ${this.percentCorrect}% (or ${this.correctGuesses} out of ${this.turns}) of the questions correctly!
+       Carefully review the correct answers as necessary. And play again!!
+              To play again type in node index.js. Good luck!
+
+-----------------------------------------------------------------------------------
+`;
+    console.log(endRoundMessage);
   }
 
 }

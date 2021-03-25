@@ -1,17 +1,17 @@
 const prototypeData = [{
   "id": 1,
   "question": "What allows you to define a set of related information using key-value pairs?",
-  "answers": ["object", "array", "function"],
+  "answers": ["array", "object", "function"],
   "correctAnswer": "object"
 }, {
   "id": 2,
   "question": "What is a comma-separated list of related values?",
-  "answers": ["array", "object", "function"],
+  "answers": ["function", "array", "object"],
   "correctAnswer": "array"
 }, {
   "id": 3,
   "question": "What type of prototype method directly modifies the existing array?",
-  "answers": ["mutator method", "accessor method", "iteration method"],
+  "answers": ["accessor method", "iteration method", "mutator method"],
   "correctAnswer": "mutator method"
 }, {
   "id": 4,
@@ -26,7 +26,7 @@ const prototypeData = [{
 }, {
   "id": 6,
   "question": "What is an example of a mutator method?",
-  "answers": ["sort()", "map()", "join()"],
+  "answers": ["map()", "sort()", "join()"],
   "correctAnswer": "sort()"
 }, {
   "id": 7,
@@ -41,7 +41,7 @@ const prototypeData = [{
 }, {
   "id": 9,
   "question": "What does the callback function for find() return?",
-  "answers": ["boolean", "array", "object"],
+  "answers": ["boolean", "array", "boolean", "object"],
   "correctAnswer": "boolean"
 }, {
   "id": 10,
@@ -51,12 +51,12 @@ const prototypeData = [{
 }, {
   "id": 11,
   "question": "Which iteration method returns a new array with all elements that match a given condition?",
-  "answers": ["filter()", "find()", "map()"],
+  "answers": ["find()", "map()", "filter()"],
   "correctAnswer": "filter()"
 }, {
   "id": 12,
-  "question": "Which iteration method returns an array of the same length as the original array?",
-  "answers": ["map()", "forEach()", "reduce()"],
+  "question": "Which iteration method returns an array of the same length as the original array?", 
+  "answers": ["forEach()", "map()", "reduce()"],
   "correctAnswer": "map()"
 }, {
   "id": 13,
@@ -76,7 +76,7 @@ const prototypeData = [{
 }, {
   "id": 16,
   "question": "What does the callback function for reduce() return?",
-  "answers": ["the accumulator", "the current element", "the initializer"],
+  "answers": ["the current element", "the accumulator", "the initializer"],
   "correctAnswer": "the accumulator"
 }, {
   "id": 17,
@@ -86,7 +86,7 @@ const prototypeData = [{
 }, {
   "id": 18,
   "question": "What does the callback function for the map() method take in?",
-  "answers": ["current element", "initializer", "boolean"],
+  "answers": ["initializer", "boolean", "current element"],
   "correctAnswer": "current element"
 }, {
   "id": 19,
@@ -111,7 +111,7 @@ const prototypeData = [{
 }, {
   "id": 23,
   "question": "Which prototype method can make a copy of a pre-existing object or merge two or more objects together?",
-  "answers": ["Object.assign()", "Object.keys()", "filter()"],
+  "answers": ["Object.keys()", "Object.assign()", "filter()"],
   "correctAnswer": "Object.assign()"
 }, {
   "id": 24,
@@ -126,7 +126,7 @@ const prototypeData = [{
 }, {
   "id": 26,
   "question": "shift(), unshift(), pop(), and push() are examples of what type of array property method?",
-  "answers": ["mutator method", "accessor method", "iteration method"],
+  "answers": ["accessor method", "iteration method", "mutator method"],
   "correctAnswer": "mutator method"
 }, {
   "id": 27,
