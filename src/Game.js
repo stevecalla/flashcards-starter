@@ -14,13 +14,23 @@ class Game {
     this.currentRound;
   }
 
-  startGame() {
+  startGame(dontRunInquirePrompt) {
+    console.log(dontRunInquirePrompt);
     const createCards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
     const deck = new Deck(createCards);
     this.currentRound = new Round(deck);
 
-    this.printMessage(deck);
-    this.printQuestion(this.currentRound);
+    // if (dontRunInquirePrompt === false) {
+    //   //do nothing
+    // } else {
+    //   this.printMessage(deck);
+    //   this.printQuestion(this.currentRound);
+    // }
+
+    if (dontRunInquirePrompt === undefined) {
+      this.printMessage(deck);
+      this.printQuestion(this.currentRound);
+    }
   }
 
   printMessage(deck) {

@@ -16,14 +16,16 @@ describe('Game', function() {
     expect(currentGame).to.be.an.instanceof(Game);
   }); 
 
-  // it('should create an instance of Round', function () {
-  //   const game = new Game();
+  it('should create an instance of Round', function () {
+    const game = new Game();
 
-  //   game.startGame();
+    const dontRunInquirePrompt = true;
 
-  //   // expect(game.deck).to.be.an.instanceof(Deck);
-  //   // expect(game.currentRound).to.be.an.instanceof(Round);
-  // });
+    game.startGame(dontRunInquirePrompt);
+
+    // expect(game.deck).to.be.an.instanceof(Deck);
+    // expect(game.currentRound).to.be.an.instanceof(Round);
+  });
 
 });
 
