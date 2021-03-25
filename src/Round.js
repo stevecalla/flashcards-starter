@@ -47,14 +47,14 @@ class Round {
 
   endRound() {
     const endRoundMessage = `
-***********************************************************************************    
-                              🟡  ROUND OVER! 🟡
+**************************************************************************************************   
+                                   🟡  ROUND OVER! 🟡
     
-         You answered ${this.percentCorrect}% (or ${this.correctGuesses} out of ${this.turns}) of the questions correctly!
-       Carefully review the correct answers as necessary. And play again!!
-              To play again type in node index.js. Good luck!
+              You answered ${this.percentCorrect}% (or ${this.correctGuesses} out of ${this.turns}) of the questions correctly!
+            Carefully review the correct answers as necessary. And play again!!
+                   To play again type in node index.js. Good luck!
 
------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
 `;
     console.log(endRoundMessage);
   }
