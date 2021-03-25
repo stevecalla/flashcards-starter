@@ -197,8 +197,6 @@ describe('Round', function() {
 
     round.takeTurn('sea otter');
 
-    const correct = round.calculatPercentCorrect();
-
     expect(round.percentCorrect).to.equal(100);
 
   });
@@ -213,8 +211,6 @@ describe('Round', function() {
     const round = new Round(deck);
 
     round.takeTurn('pug');
-
-    const correct = round.calculatPercentCorrect();
 
     expect(round.percentCorrect).to.equal(0);
 
@@ -232,8 +228,6 @@ describe('Round', function() {
     round.takeTurn('pug');
     round.takeTurn('gallbladder');
     round.takeTurn('playing with bubble wrap')
-
-    const correct = round.calculatPercentCorrect();
 
     expect(round.percentCorrect).to.equal(67);
   }); 

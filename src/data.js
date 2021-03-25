@@ -55,7 +55,7 @@ const prototypeData = [{
   "correctAnswer": "filter()"
 }, {
   "id": 12,
-  "question": "Which iteration method returns an array of the same length as the original array?",
+  "question": "Which iteration method returns an array of the same length as the original array?", 
   "answers": ["forEach()", "map()", "reduce()"],
   "correctAnswer": "map()"
 }, {
@@ -86,7 +86,7 @@ const prototypeData = [{
 }, {
   "id": 18,
   "question": "What does the callback function for the map() method take in?",
-  "answers": ["initializer", "boolean", "current element",],
+  "answers": ["initializer", "boolean", "current element"],
   "correctAnswer": "current element"
 }, {
   "id": 19,
