@@ -15,29 +15,31 @@ A [Front-End Project] by: [Steve Calla](https://github.com/stevecalla)
 
 Flashcards is a game that tests a users understanding of basic coding concepts. The test is run throought the command line! 😱 A user will be preented with 30 questions, take guesses, and see a final score at the end of the round.
 
-## Website Preview - Basic Functionality
+## Game Preview - In Terminal
 
-<!-- <img src="https://media.giphy.com/media/CrMXnfKeOY4yPH08C5/giphy.gif" width="100%" height="500"/> -->
+<img src="https://media.giphy.com/media/v3aROyIpe7SBdknlUb/giphy.gif" width="100%" height="500"/>
 
-## Main Page View
+## Testing Preview - 100% Passing
 
-<!-- <img width="1255" alt="Blank Board" src="https://user-images.githubusercontent.com/72281855/110523549-7e457980-80cf-11eb-93ef-937ce54949a6.png"> -->
+<img width="1122" alt="TESTING SCREENSHOT" src="https://user-images.githubusercontent.com/72281855/112496560-74b44680-8d4a-11eb-8ecf-e22102c0b102.png">
 
 ## Functionality
 
-* TBD
-* TBD
-* TBD
+* Learning Objectives:
+  * Goals and Objectives
+  * Contribute code to an partially constructed object-oriented application
+  * Follow spec/prompts to make a working application
+  * Implement ES6 classes
+  * Write modular, reusable code that follows SRP (Single Responsibility Principle)
+  * Implement a robust testing suite using TDD
 
-* Enhancements:
-    * Improved the start and end game layout and description.
+* Project Upgrades:
+    * Enhanced the start and end game layout and description.
     * Added "process.exit(0)" to line 40 of util.js to programatically return the user to the prompt at the end of the game.
     * Added a blue circle 🔵 emoji for correct answers and red circle 🔴 emoji for incorrect answers.
     * Removed unnecessary server related code in the index.js file.
-    * TBD
 
-
-* Future Enhancements:
+* Possible Enhancements:
     * More practice: Add functionality so that a score of less than 90% will require the user to go through the entire dataset again.
     * Review incorrect answers: Add functionality so that the Round (and thus, the Game) does not end after you’ve gone through all of the cards. The player should then be prompted to try to guess again, reviewing only those cards that are stored as incorrect.
     * Timer: At the end of the game, report how much time it took to complete the game (in minutes and seconds).

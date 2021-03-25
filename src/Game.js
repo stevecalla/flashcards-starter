@@ -15,7 +15,8 @@ class Game {
   }
 
   startGame(dontRunInquirePrompt) {
-    console.log(dontRunInquirePrompt);
+    // console.log(dontRunInquirePrompt);
+    
     const createCards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
     const deck = new Deck(createCards);
     this.currentRound = new Round(deck);
