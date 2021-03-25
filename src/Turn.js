@@ -12,20 +12,12 @@ class Turn {
     this.currentCard;
   }
 
-  evaluateGuess() { //refactor to ternary?
-    if (this.guess === this.currentCard.correctAnswer) {
-      return true;
-    } else {
-      return false;
-    }
+  evaluateGuess() {
+    return this.guess === this.currentCard.correctAnswer ? true : false;
   }
 
-  giveFeedback() { //refactor to ternary?
-    if (this.evaluateGuess()) {
-      return 'correct!';
-    } else {
-      return 'incorrect!';
-    }
+  giveFeedback() {
+    return this.evaluateGuess() ? 'correct! 🔵' : 'incorrect! 🔴';
   }
 
 }
