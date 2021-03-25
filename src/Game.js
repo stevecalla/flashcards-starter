@@ -9,25 +9,19 @@ const prototypeQuestions = data.prototypeData;
 class Game {
   constructor() {
     this.currentRound;
-    // console.log(this.currentRound);
-    // console.log(this);
-    this.createCards = [];
-    this.deck;
+
   }
 
-  startGame() {
-    for(let i = 0; i < prototypeQuestions.length; i++) { //refactor to iterator method
-      this.createCards.push(new Card(prototypeQuestions[i].id, prototypeQuestions[i].question, prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer));
-    }
-    // console.log(this.createCards);
-    this.deck = new Deck(this.createCards);
-    // console.log(deck);
-    // console.log(deck);
-    // const newRound = new Round(deck);
-    this.currentRound = new Round(this.deck);
-    // console.log(this.currentRound);
+  // I just came up with a solution using a trigger (think on/off switch) to prevent 
+  // game.start() from running during the test invocation vs during the real invocation. 
+  // Don’t want to give too much away but hopefully this will get you going somewhere
 
-    this.printMessage(this.deck);
+  startGame() {
+    const createCards = prototypeQuestions.map(card => new Card(card.id, card.question, card.answers, card.correctAnswer));
+    const deck = new Deck(createCards);
+    this.currentRound = new Round(deck);
+    
+    this.printMessage(deck);
     this.printQuestion(this.currentRound);
   }
 
@@ -37,8 +31,8 @@ class Game {
                             WELCOME TO FLASHCARDS! 
 
             You will be presented ${deck.countCards()} questions. Make your best guess.
-      Press the numer of your choice or enter for the default first choice.
-                Your score will be reported after the last card.
+   Press the numer of your choice or press <return> for the default first choice.
+    Your score (number of correct guesses) will be reported after the last card.
 -----------------------------------------------------------------------------------
 `)
   }
