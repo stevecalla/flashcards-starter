@@ -26,7 +26,6 @@ Flashcards is a game that tests a users understanding of basic coding concepts. 
 ## Functionality
 
 * Learning Objectives:
-  * Goals and Objectives
   * Contribute code to an partially constructed object-oriented application
   * Follow spec/prompts to make a working application
   * Implement ES6 classes
